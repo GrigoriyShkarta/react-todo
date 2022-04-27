@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import List from "./components/List";
+import AddList from "./components/AddListButton";
+
+import listSvg from "./assets/img/list.svg";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+    return (
+    <div className="todo">
+        <div className="todo__sidebar">
+        <List items={[
+            {
+                icon: <img src={listSvg} alt="list"/>,
+                name: "Все задачи",
+            }
+
+        ]}/>
+        <List items={[
+                {
+                    color: "green",
+                    name: "Покупки",
+                    active: true
+                },
+                {
+                    color: "blue",
+                    name: "Фронтенд",
+
+                },
+                {
+                    color: "pink",
+                    name: "Фильмы и сериалы"
+                },
+            ]}
+            isRemovable
+        />
+        <AddList/>
+      </div>
     </div>
-  );
+    );
 }
 
 export default App;
