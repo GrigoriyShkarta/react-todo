@@ -1,8 +1,8 @@
 import List from "./components/List";
-import AddList from "./components/AddListButton";
+import AddListButton from "./components/AddListButton";
 
 import listSvg from "./assets/img/list.svg";
-
+import DB from './assets/db.json'
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
             ]}
             isRemovable
         />
-        <AddList/>
+        <AddListButton colors={DB.colors}/>
       </div>
     </div>
     );
